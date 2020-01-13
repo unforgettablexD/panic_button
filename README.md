@@ -17,6 +17,8 @@ Development of platform for dialling single emergency no SDC (Short digit code)
 
 **Problem Statement Number:**  PJ240  
 
+**Domain:** Software - Mobile app development  
+
 **Prerequisites:**  
 APK File for user to use the application.  
                     XAMPP Server and myPHP for the developers for the disaster management team.
