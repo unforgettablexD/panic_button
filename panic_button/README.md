@@ -1,16 +1,36 @@
-# panic_button
+This is a readme file.
 
-A new Flutter application.
+# Project Title: SOS Button
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Team Name: blank
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Team Number: 2
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+**Problem Statement:**
+Development of platform for dialling single emergency no SDC (Short digit code)
+		    or just pressing a button in mobile phone using any of the available mobile network,
+	            which will send the live location of the customer to a predetermined server which
+		    is to be integrated with the server meant for action program of Disaster management team.
+
+**Problem Statement Number:**  PJ240
+
+**Domain:** Software - Mobile app development
+
+**Prerequisites:**
+APK File for user to use the application.
+                    XAMPP Server and myPHP for the developers for the disaster management team.
+
+
+**Team Members:**
+		Harshul Ravindran - RA1811003040074
+	      Arnav Kumar       - RA1811003040271
+	      Manthan Shah      - RA1811003040045
+	      Nikita Das        - RA1811003040082
+	      Amruthaa V        - RA1811003040061
+	      Karthik Prakash   - RA1811003040032
+
+
+## Leader of this Project (Harshul Ravindran)

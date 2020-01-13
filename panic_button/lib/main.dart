@@ -1,40 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:location/location.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'package:geocoder/geocoder.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Panic Button',
+      title: 'PANIC BUTTON',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Panic Button'),
-    );
-  }
-}
-
-class BaseLayout extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/bg.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
-        child: null /* add child content here */,
-      ),
+      home: MyHomePage(title: 'PANIC BUTTON'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
 
   final String title;
 
@@ -43,34 +30,101 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  _database() async {
+    LocationData currentLocation;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+    var location = new Location();
+    try {
+      currentLocation = await location.getLocation();
+
+      double lat = currentLocation.latitude;
+      double lng = currentLocation.longitude;
+      // final response = await http.post(
+      //     "http://192.168.1.107/sahyog/views/sahyogflutter/helper/demo/geocode.php",
+      //     body: {
+      //       "lat": lat.toString(),
+      //       "lng": lng.toString(),
+      //       "action": "geo_loc",
+      //     });
+      // Map<String, dynamic> _data = jsonDecode(response.body);
+      final coordinates = new Coordinates(lat, lng);
+      var addresses =
+          await Geocoder.local.findAddressesFromCoordinates(coordinates);
+      var first = addresses.first;
+      print("${first.featureName} : ${first.addressLine}");
+      _neverSatisfied(first);
+    } catch (e) {
+      print("error");
+      print(e);
+    }
   }
 
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text("Send Alert"),
       ),
-      body:
-      Center(
+      body: bodyData(),
+    );
+  }
+
+  Future<void> _neverSatisfied(var first) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false, // user must tap button!
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Your Location'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[Text("${first.addressLine}")],
+            ),
+          ),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget bodyData() => Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            FloatingActionButton(
-              tooltip: 'Panic Button',
-                child: Icon(Icons.cloud_circle),
-              onPressed: _incrementCounter,
-
+            Ink(
+                decoration: ShapeDecoration(
+                  color: Colors.black,
+                  shape: CircleBorder(),
+                ),
+                child: IconButton(
+                  icon: Icon(
+                    Icons.all_inclusive,
+                    color: Colors.blueAccent,
+                  ),
+                  iconSize: 150.0,
+                  splashColor: Colors.redAccent,
+                  padding: EdgeInsets.all(40.0),
+                  onPressed: () {
+                    _database();
+                  },
+                )),
+            Padding(
+              padding: EdgeInsets.all(25.0),
+            ),
+            Text(
+              "Send Emergency Alert.",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 22.2,
+                  fontWeight: FontWeight.bold),
             )
           ],
         ),
-      ),
-    );
-  }
+      );
 }
