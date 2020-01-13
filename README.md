@@ -9,13 +9,15 @@ This is a readme file.
 ## Team Number: 2
 
 
-**Problem Statement:**  Development of platform for dialling single emergency no SDC (Short digit code) 
+**Problem Statement:**  
+Development of platform for dialling single emergency no SDC (Short digit code) 
 		    or just pressing a button in mobile phone using any of the available mobile network, 
 	            which will send the live location of the customer to a predetermined server which 
 		    is to be integrated with the server meant for action program of Disaster management team.
 
 
-**Prerequisites:**  APK File for user to use the application.  
+**Prerequisites:**  
+APK File for user to use the application.  
                     XAMPP Server and myPHP for the developers for the disaster management team.
 
 
