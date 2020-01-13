@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             FloatingActionButton(
               tooltip: 'Panic Button',
-                child: Icon(Icons.add),
+                child: Icon(Icons.cloud_circle),
               onPressed: _incrementCounter,
 
             )
