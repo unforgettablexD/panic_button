@@ -96,8 +96,9 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 35.0,
             ),
             aadhar,
-            SizedBox(height: 40.0),
-            registerButton,
+            //SizedBox(height: 40.0),
+            //registerButton,
+
 
             ],
             ),

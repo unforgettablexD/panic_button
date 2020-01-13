@@ -4,7 +4,7 @@ description: A new Flutter application for user profile.
 dependencies:
   flutter:
     sdk: flutter
-
+  nice_button: ^0.1.7
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
