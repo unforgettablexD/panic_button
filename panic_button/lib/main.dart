@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: EdgeInsets.all(25.0),
             ),
             Text(
-              "Send Emergency Alert.",
+              "Hold button for emergency request.",
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 22.2,
