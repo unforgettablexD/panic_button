@@ -39,14 +39,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
       double lat = currentLocation.latitude;
       double lng = currentLocation.longitude;
-      // final response = await http.post(
-      //     "http://192.168.1.107/sahyog/views/sahyogflutter/helper/demo/geocode.php",
-      //     body: {
-      //       "lat": lat.toString(),
-      //       "lng": lng.toString(),
-      //       "action": "geo_loc",
-      //     });
-      // Map<String, dynamic> _data = jsonDecode(response.body);
       final coordinates = new Coordinates(lat, lng);
       var addresses =
           await Geocoder.local.findAddressesFromCoordinates(coordinates);
