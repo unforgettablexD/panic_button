@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './main.dart';
 
 void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
@@ -24,6 +25,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
+
+
   @override
   Widget build(BuildContext context) {
     final phoneNumber = TextField(
@@ -70,6 +73,10 @@ class _MyHomePageState extends State<MyHomePage> {
         minWidth: MediaQuery.of(context).size.width,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
         onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(
+              builder: (BuildContext context) => Sos()));
+
         },
         child: Text("Register",
             textAlign: TextAlign.center,
@@ -77,28 +84,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 color: Colors.white, fontWeight: FontWeight.bold)),
 
       ),
+
     );
     return Scaffold(
       //backgroundColor: Colors.black87,
+      resizeToAvoidBottomInset: false,
       body: Center(
-        /*decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            stops: [0.2,0.4,0.6,0.8],
-            colors: [
-              Colors.indigo[200],
-              Colors.indigo[425],
-              Colors.indigo[700],
-              Colors.indigo[1000]
-            ],
-          ),
-        ),*/
+
         child: Container(
           color: Colors.white,
           child: Padding(
             padding: const EdgeInsets.all(36.0),
-            //child: SingleChildScrollView(
             child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -121,11 +117,13 @@ class _MyHomePageState extends State<MyHomePage> {
             registerButton,
 
 
+
             ],
             ),
-            ),
+
         ),
       ),
+    ),
     );
   }
 }

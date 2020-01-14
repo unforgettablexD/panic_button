@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:location/location.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
+//import 'package:http/http.dart' as http;
+//import 'dart:convert';
 import 'package:geocoder/geocoder.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(Sos());
 
-class MyApp extends StatelessWidget {
+class Sos extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
