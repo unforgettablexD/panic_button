@@ -1,4 +1,3 @@
-This is a readme file.
 
 # Project Title: SOS Button
 
